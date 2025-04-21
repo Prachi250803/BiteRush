@@ -90,7 +90,7 @@
   padding: 10px;
   background-color: white;
   border-radius: 6px;
-  box-shadow: 0 4px 5px rgba(224, 84, 84, 0.801);
+  box-shadow: 0 2px 5px rgba(218, 99, 62, 0.801);
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   list-style: none;
@@ -126,7 +126,8 @@
     align-items: center;
     gap: 4px;
     padding: 4px 8px;
-    background-color: #eee;
+    background-color: hwb(7 33% 1%);
+    color: white;
     border-radius: 12px;
     font-size: 14px;
     width: fit-content;
