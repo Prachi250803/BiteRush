@@ -1,0 +1,150 @@
+.root {
+  background-color: #f9fafb;
+}
+.Header {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  padding: 20px;
+  .nav-items {
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    ul {
+      display: flex;
+      gap: 50px;
+      height: 100%;
+      align-items: center;
+      li {
+        font-size: 20px;
+        list-style: none;
+        cursor: pointer;
+        a {
+          all: unset;
+        }
+      }
+      button {
+        width: 60px;
+        padding: 5px;
+        height: 100%;
+        background-color: #2563eb;
+        color: white;
+        border-radius: 5px;
+        border-style: none;
+      }
+    }
+  }
+}
+.logo-conatiner {
+  width: 150px;
+  height: 100%;
+  img {
+    width: 150px;
+    height: 100%;
+    object-fit: cover;
+  }
+  ul {
+    display: flex;
+    gap: 80px;
+    list-style: none;
+    margin: 20px;
+    li {
+      font-size: 25px;
+    }
+  }
+}
+.filter {
+  display: flex;
+  gap: 50px;
+  margin: 20px;
+}
+
+.toprated {
+  height: 20px;
+  width: 80px;
+}
+.res-conatiner {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  padding: 32px;
+  justify-content: center;
+  overflow: visible;
+}
+.Link {
+  all: unset;
+}
+.SearchConatiner {
+  width: 350px;
+  height: 100%;
+  display: flex;
+  input{
+    width: 100%;
+  }
+}
+.res-card {
+    width: 280px;
+    height: 400px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(17, 12, 12, 0.1);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    list-style: none;
+    cursor: pointer; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+  
+    .res-image {
+      padding: 0px;
+      width: 100%;
+      align-items: center;
+      height: 250px;
+      object-fit: cover;
+    }
+  
+    .res-content {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .res-title,
+      .res-cusins {
+        margin: 0px;
+      }
+      .res-cusins{
+        font-size: 15px;
+        color: #48494b;
+      }
+    }
+  
+    .res-rating {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 8px;
+      background-color: #eee;
+      border-radius: 12px;
+      font-size: 14px;
+      width: fit-content;
+    }
+  }
+.res-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  border: 1px solid grey;
+}
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.shimmer-card {
+  height: 350px;
+  width: 300px;
+  background-color: lightgray;
+  margin: 20px;
+}

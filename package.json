@@ -1,0 +1,29 @@
+{
+  "name": "bite-rush",
+  "version": "1.0.0",
+  "description": "By prachi Apsingekar",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Prachi250803/BiteRush.git"
+  },
+  "author": "Prachi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Prachi250803/BiteRush/issues"
+  },
+  "homepage": "https://github.com/Prachi250803/BiteRush#readme",
+  "dependencies": {
+    "parcel": "^2.14.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
+    "react-router": "^6.17.0",
+    "react-router-dom": "^6.17.0",
+    "sass": "^1.86.3"
+  }
+}
