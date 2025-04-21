@@ -2,14 +2,14 @@ const About = () => {
     return (
       <div className="AboutUs">
         <section className="hero">
-          <h1>About BiteRush</h1>
+          <h1>About RushBite</h1>
           <p>"Fueling your cravings, faster!"</p>
         </section>
   
         <section className="content">
           <h2>Who We Are</h2>
           <p>
-            BiteRush is a dynamic food delivery platform connecting foodies with their favorite local restaurants.
+            RushBite is a dynamic food delivery platform connecting foodies with their favorite local restaurants.
             Whether it's a midnight snack or a family dinner, we make it happen — fast, fresh, and flawless.
           </p>
   
@@ -19,7 +19,7 @@ const About = () => {
             as quickly and reliably as possible.
           </p>
   
-          <h2>Why Choose BiteRush?</h2>
+          <h2>Why Choose RushBite?</h2>
           <ul>
             <li>⚡ Lightning-Fast Delivery</li>
             <li>📍 Real-Time Tracking</li>
