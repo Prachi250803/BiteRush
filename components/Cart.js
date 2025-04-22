@@ -4,18 +4,13 @@ import { useLocation } from "react-router";
 const Cart = () => {
   const location = useLocation();
   const cartItems = location.state?.cartItems || [];
-  const[cartItemFilter,usecartItemFilter] = useState(cartItems)
+  const [cartItemFilter, usecartItemFilter] = useState(cartItems);
   const total = cartItemFilter.reduce((acc, item) => acc + item.price, 0);
-  const removeItem = (cartItem) =>{
-    const updatedCartItems = cartItemFilter.filter(item => item !== cartItem);
-
-  console.log('Updated cartItems', updatedCartItems);
-
-  // Update the state using usecartItemFilter
-  usecartItemFilter(updatedCartItems);
-
-  console.log('Item removed');
-  }
+  const removeItem = (cartItem) => {
+    const updatedCartItems = cartItemFilter.filter((item) => item !== cartItem);
+    // Update the state using usecartItemFilter
+    usecartItemFilter(updatedCartItems);
+  };
 
   return (
     <div className="Cart">
@@ -33,8 +28,8 @@ const Cart = () => {
             src="https://cdn-icons-png.flaticon.com/512/1828/1828778.png"
             alt="Remove"
             className="remove-icon"
-            onClick = {() => {
-                removeItem(cartItem)
+            onClick={() => {
+              removeItem(cartItem);
             }}
           />
         </div>
@@ -42,7 +37,7 @@ const Cart = () => {
 
       <div className="cart-summary">
         <p>
-          Total: <strong>{total/100}</strong>
+          Total: <strong>{total / 100}</strong>
         </p>
         <button className="checkout-btn">Proceed to Checkout</button>
       </div>
