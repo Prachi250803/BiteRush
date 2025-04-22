@@ -1,17 +1,28 @@
+import { useState } from "react";
 import { useLocation } from "react-router";
 
 const Cart = () => {
   const location = useLocation();
   const cartItems = location.state?.cartItems || [];
-  const total = cartItems.reduce((acc, item) => acc + item.price, 0);
-  
+  const[cartItemFilter,usecartItemFilter] = useState(cartItems)
+  const total = cartItemFilter.reduce((acc, item) => acc + item.price, 0);
+  const removeItem = (cartItem) =>{
+    const updatedCartItems = cartItemFilter.filter(item => item !== cartItem);
+
+  console.log('Updated cartItems', updatedCartItems);
+
+  // Update the state using usecartItemFilter
+  usecartItemFilter(updatedCartItems);
+
+  console.log('Item removed');
+  }
 
   return (
     <div className="Cart">
       <h1>RushBite</h1>
       <h2>Shopping Cart</h2>
 
-      {cartItems.map((cartItem) => (
+      {cartItemFilter.map((cartItem) => (
         <div className="cart-item" key={cartItem.id}>
           <div className="item-details">
             <h4>{cartItem.name}</h4>
@@ -22,6 +33,9 @@ const Cart = () => {
             src="https://cdn-icons-png.flaticon.com/512/1828/1828778.png"
             alt="Remove"
             className="remove-icon"
+            onClick = {() => {
+                removeItem(cartItem)
+            }}
           />
         </div>
       ))}
