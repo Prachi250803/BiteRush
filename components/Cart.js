@@ -4,6 +4,7 @@ const Cart = () => {
   const location = useLocation();
   const cartItems = location.state?.cartItems || [];
   const total = cartItems.reduce((acc, item) => acc + item.price, 0);
+  
 
   return (
     <div className="Cart">
