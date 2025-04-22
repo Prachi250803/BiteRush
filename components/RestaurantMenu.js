@@ -23,7 +23,6 @@ const RestaurantMenu = () => {
     const cards =
       json?.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
 
-    console.log('cards', cards);
 
     const items = [];
     cards?.forEach((c) => {
@@ -41,30 +40,46 @@ const RestaurantMenu = () => {
 
   return (
     <div className="menu">
-      <h1>{resInfo?.name}</h1>
-      <h3>{resInfo?.cuisines?.join(", ")}</h3>
+      <div className="res-info">
+        <h1>{resInfo?.name}</h1>
+        <h3>
+          {resInfo?.cuisines?.join(", ")} - {resInfo?.sla?.deliveryTime} mins
+        </h3>
+      </div>
       {menuItems.length === 0 ? (
         <p>Loading menu or no items available...</p>
       ) : (
-        <ul>
+        <div>
           {menuItems.map((item, index) => {
-            const category = Object.keys(item)[0]; // Get the category name
+            const category = Object.keys(item)[0];
             const items = item[category];
-
             return (
-              <li key={index}>
-                <strong>Category: {category}</strong>
-                <ul>
+              <div key={index} className="menu-section">
+                <h2 className="menu-category-title">{category}</h2>
+                <div className="menu-items-list">
                   {items.map((menuItem, idx) => (
-                    <li key={idx}>
-                      {menuItem.name} - {menuItem.price} rs
-                    </li>
+                    <div key={idx} className="menu-item-card">
+                      <img
+                        src={
+                          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/" +
+                          menuItem.imageId
+                        }
+                        alt={menuItem.name}
+                        className="menu-item-image"
+                      />
+                      <div className="menu-item-content">
+                        <h3 className="menu-item-name">{menuItem.name}</h3>
+                        <p className="menu-item-desc">{menuItem.description}</p>
+                        <p className="menu-item-price">₹{menuItem.price}</p>
+                        <button className="menu-add-btn">Add</button>
+                      </div>
+                    </div>
                   ))}
-                </ul>
-              </li>
+                </div>
+              </div>
             );
           })}
-        </ul>
+        </div>
       )}
     </div>
   );
