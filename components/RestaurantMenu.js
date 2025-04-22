@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import {Link} from 'react-router-dom'
 
 const RestaurantMenu = () => {
   const { resId } = useParams(); // ✅ Destructure to get the ID as string
   const [menuItems, setMenuItems] = useState([]);
   const [resInfo, setResInfo] = useState("");
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     fetchMenu();
@@ -38,8 +40,17 @@ const RestaurantMenu = () => {
     setMenuItems(items);
   };
 
+  const addfood = (menuItem) => {
+    setCartItems(prev => [...prev, menuItem]);
+  };
+  console.log(cartItems)
   return (
     <div className="menu">
+       <div className="Checkout">
+          <Link to="/cart" state={{ cartItems }}><button className="checkout-btn">
+            Checkout
+          </button> </Link>
+        </div>
       <div className="res-info">
         <h1>{resInfo?.name}</h1>
         <h3>
@@ -49,6 +60,7 @@ const RestaurantMenu = () => {
       {menuItems.length === 0 ? (
         <p>Loading menu or no items available...</p>
       ) : (
+        <div>
         <div>
           {menuItems.map((item, index) => {
             const category = Object.keys(item)[0];
@@ -70,8 +82,11 @@ const RestaurantMenu = () => {
                       <div className="menu-item-content">
                         <h3 className="menu-item-name">{menuItem.name}</h3>
                         <p className="menu-item-desc">{menuItem.description}</p>
-                        <p className="menu-item-price">₹{menuItem.price}</p>
-                        <button className="menu-add-btn">Add</button>
+                        <p className="menu-item-price">₹{menuItem.price/100}</p>
+                        <button className="menu-add-btn" onClick={()=>{
+                          console.log('clicked')
+                          addfood(menuItem)
+                        }} >Add</button>
                       </div>
                     </div>
                   ))}
@@ -79,6 +94,7 @@ const RestaurantMenu = () => {
               </div>
             );
           })}
+        </div>
         </div>
       )}
     </div>
