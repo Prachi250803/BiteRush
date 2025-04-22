@@ -92,7 +92,7 @@
   border-radius: 6px;
   box-shadow: 0 2px 5px rgba(218, 99, 62, 0.801);
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
   list-style: none;
   cursor: pointer;
   display: flex;
@@ -222,7 +222,7 @@
           &.secondary {
             background-color: #f0f0f0;
             color: #333;
-  
+            
             &:hover {
               background-color: #e0e0e0;
             }

@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom'
+
 const About = () => {
     return (
       <div className="AboutUs">
@@ -28,8 +30,8 @@ const About = () => {
           </ul>
   
           <div className="actions">
-            <button>Order Now</button>
-            <button className="secondary">Contact Us</button>
+           <Link to="/" className='Link'> <button>Order Now </button> </Link>
+           <Link to="/contact" className='Link'> <button className='secondary'>Contact us</button></Link>
           </div>
         </section>
       </div>
