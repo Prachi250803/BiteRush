@@ -12,7 +12,6 @@ const Header = (props) => {
     const clicked = () =>{
         btnName=='Login' ? setbtnName("Logout") : setbtnName("Login")
     }
-    console.log(props?.json?.data?.cards)
     useEffect(() => {
         if (props?.json?.data?.cards) {
           const restaurants =
@@ -25,9 +24,6 @@ const Header = (props) => {
        
       }, []);
       useEffect(() => {
-        console.log("Restaurants:", listOfRestaurant);
-        console.log("Filtered:", filteredListofres);
-        console.log("Input:", Input);
       }, [listOfRestaurant, filteredListofres, Input]);
       
     return (
@@ -41,9 +37,7 @@ const Header = (props) => {
                     className="Search-box"
                     value={Input}
             onChange={(e) => {
-                console.log(e.target.value)
               setInput(e.target.value);
-              console.log(Input)
             }}
                   ></input>
                   <button

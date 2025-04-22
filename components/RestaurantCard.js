@@ -2,7 +2,6 @@ import { cdn_link } from ".././src/utils/constants"
 import { FaStar, } from 'react-icons/fa'
 
 const RestaurantCard = (props) =>{
-    console.log('hiiiii')
     return (
         <div className="res-card">
             <img src={cdn_link + props.resdata.info.cloudinaryImageId} alt="food" className="res-image" />

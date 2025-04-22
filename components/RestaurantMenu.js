@@ -43,7 +43,6 @@ const RestaurantMenu = () => {
     setCartItems((prev) => [...prev, menuItem]);
   };
   
-  console.log(cartItems);
   return (
     <div className="menu">
       <div className="res-check-info">
@@ -94,7 +93,6 @@ const RestaurantMenu = () => {
                           <button
                             className="menu-add-btn"
                             onClick={() => {
-                              console.log("clicked");
                               addfood(menuItem);
                             }}
                           >
