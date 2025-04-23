@@ -12,27 +12,21 @@ import RestaurantMenu from '../components/RestaurantMenu'
 import { useEffect , useState } from "react";
 
 const AppLayout = () => {
-    const [json, setJson] = useState(null);
+  const [json, setJson] = useState(null);
+
+  // Fetch data when the component mounts
+  useEffect(() => {
+    fetch('http://localhost:3000/api/swiggy')  // Backend is running on localhost:3000
+      .then(response => response.json())
+      .then(data => {
+        console.log('Fetched Swiggy data:', data);
+        setJson(data); // Save data in state
+      })
+      .catch(error => {
+        console.error('Error fetching Swiggy data:', error);
+      });
+  }, []);
   
-    useEffect(() => {
-      fetchData();
-    }, []);
-  
-    const fetchData = async () => {
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-      
-        const url = isMobile
-          ? "https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=12.9352403&lng=77.624532&carousel=true&third_party_vendor=1"
-          : "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
-      
-        try {
-          const response = await fetch(url);
-          const jsonData = await response.json();
-          setJson(jsonData);
-        } catch (err) {
-          console.error("Error fetching data:", err);
-        }
-      };
     return (
       <div className="app">
         <Header json={json}/>
