@@ -29,7 +29,7 @@ const Body = () => {
         {filteredListofres.map((restaurant) => (
           <Link
             key={ restaurant?.info?.name}
-            to={"/" + restaurant?.info?.id}
+            to={"/menu/" + restaurant?.info?.id}
             className="Link">
             <RestaurantCard resdata={restaurant} />
           </Link>
