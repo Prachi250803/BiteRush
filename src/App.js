@@ -13,19 +13,25 @@ import { useEffect , useState } from "react";
 
 const AppLayout = () => {
   const [json, setJson] = useState(null);
-
+  const fetchData = async () => {
+    try {
+      const res = await fetch("http://localhost:3001/api/swiggy");
+      const data = await res.json();
+      setJson(data);
+    } catch (err) {
+      console.error("Failed to fetch:", err);
+    }
+  };
+  
   // Fetch data when the component mounts
   useEffect(() => {
-    fetch('http://localhost:3000/api/swiggy')  // Backend is running on localhost:3000
-      .then(response => response.json())
-      .then(data => {
-        console.log('Fetched Swiggy data:', data);
-        setJson(data); // Save data in state
-      })
-      .catch(error => {
-        console.error('Error fetching Swiggy data:', error);
-      });
+    fetchData();
   }, []);
+  
+  useEffect(() => {
+    console.log("Fetched JSON:", json);
+  }, [json]);
+  
   
     return (
       <div className="app">
