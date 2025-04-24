@@ -7,15 +7,18 @@ const RestaurantMenu = () => {
   const [menuItems, setMenuItems] = useState([]);
   const [resInfo, setResInfo] = useState("");
   const [cartItems, setCartItems] = useState([]);
+  const API_BASE =
+  process.env.NODE_ENV === "development"
+  ? "http://localhost:3001"
+  : "";
 
   useEffect(() => {
     fetchMenu();
   }, [resId]); // ✅ Adding resId as dependency to reload menu when resId changes
 
   const fetchMenu = async () => {
-    const response = await fetch(
-      `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9352403&lng=77.624532&restaurantId=${resId}&catalog_qa=undefined&submitAction=ENTER`
-    );
+    
+    const response =await fetch(`${API_BASE}/api/menu/${resId}`);
 
     const json = await response.json();
 
