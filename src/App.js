@@ -15,12 +15,13 @@ const AppLayout = () => {
   const [json, setJson] = useState(null);
   const API_BASE =
   process.env.NODE_ENV === "development"
-  ? "http://localhost:3001"
-  : "";
+    ? "http://localhost:3001"
+    : process.env.REACT_APP_API_URL || "";  // Fallback to environment variable
+
   const fetchData = async () => {
     try {
       const res = await fetch(`${API_BASE}/api/swiggy`);
-      console.log('homepage',`${API_BASE}/api/swiggy`)
+      console.log('Fetched data:', `${API_BASE}/api/swiggy`);
       const data = await res.json();
       setJson(data);
     } catch (err) {
