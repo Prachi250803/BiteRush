@@ -18,10 +18,10 @@ const RestaurantMenu = () => {
     
     const response = await fetch(
       resId 
-        ? `${API_BASE}/api/menu/${resId}` 
+        ? `${API_BASE}/api/menu?resId=${resId}` 
         : `${API_BASE}/api/menu`
     );
-        
+    
     const json = await response.json();
     console.log(`${API_BASE}/api/menu/${resId}`)
 
