@@ -20,6 +20,7 @@ const AppLayout = () => {
   const fetchData = async () => {
     try {
       const res = await fetch(`${API_BASE}/api/swiggy`);
+      console.log('homepage',`${API_BASE}/api/swiggy`)
       const data = await res.json();
       setJson(data);
     } catch (err) {
@@ -33,7 +34,6 @@ const AppLayout = () => {
   }, []);
 
   useEffect(() => {
-    console.log("Fetched JSON:", json);
   }, [json]);
 
   return (

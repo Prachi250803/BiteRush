@@ -25,7 +25,8 @@ app.get('/api/swiggy', async (req, res) => {
   }
 });
 app.get('/api/menu/:resId', async (req, res) => {
-  const { resId } = req.query;
+  const { resId } = req.params;  // Extract the restaurant ID from the route parameter
+  
   try {
     const response = await fetch(
       `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9352403&lng=77.624532&restaurantId=${resId}&catalog_qa=undefined&submitAction=ENTER`,
@@ -37,6 +38,7 @@ app.get('/api/menu/:resId', async (req, res) => {
       }
     );
     const data = await response.json();
+    console.log('Fetched restaurant menu data:', data);  // Log the fetched data for debugging
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.status(200).json(data);
   } catch (err) {
@@ -44,6 +46,7 @@ app.get('/api/menu/:resId', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch restaurant menu' });
   }
 });
+
 
 app.listen(3001, () => {
   console.log('Proxy server running on http://localhost:3001');

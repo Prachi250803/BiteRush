@@ -18,9 +18,10 @@ const RestaurantMenu = () => {
 
   const fetchMenu = async () => {
     
-    const response =await fetch(`${API_BASE}/api/swiggy?resId=${resId}`);
-
+    const response =await fetch(`${API_BASE}/api/menu/${resId}`);
+    
     const json = await response.json();
+    console.log(`${API_BASE}/api/menu/${resId}`)
 
     const resInfo = json?.data?.cards?.[2]?.card?.card?.info;
     setResInfo(resInfo);
