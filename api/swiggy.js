@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 
 module.exports = async (req, res) => {
-  const { resId } = req.params;
+  const { resId } = req.query;   // ✅ not req.params
 
   try {
     let url = "";
