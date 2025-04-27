@@ -8,7 +8,7 @@ const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState("");
   const [cartItems, setCartItems] = useState([]);
   const isLocalhost = window.location.hostname === "localhost";
-  const API_BASE = process.env.NODE_ENV === "development" ? "http://localhost:3001" : "/api";
+  const API_BASE = process.env.NODE_ENV === "development" ? "http://localhost:3001" : "";
 
   useEffect(() => {
     fetchMenu();
