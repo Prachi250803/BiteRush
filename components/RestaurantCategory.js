@@ -11,12 +11,12 @@ const RestaurantCategory = ({ item, cartItems, addFood, removeFood ,showItems, s
 
   return (
     <div className="Accordian-parent">
-      <div className="Accordian">
+      <div className="Accordian"  onClick={ handleClick}>
         <span>
           {category} ({category.length})
         </span>
         <button
-        onClick={ handleClick}
+       
           className="Accordian-button"
         >
           {showItems ? <FaChevronUp /> : <FaChevronDown />}
