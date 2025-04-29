@@ -465,7 +465,7 @@ body{
     display: flex;
     flex-direction: column;
     position: relative;
-    background-color:whitesmoke;
+    background-color:#ff8a6533;
   
     .Accordian {
       display: flex;
