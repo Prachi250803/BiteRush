@@ -11,7 +11,7 @@ const Body = () => {
   const { filteredRestaurants } = useOutletContext();
   const OnlineStatus = useOnlineStatus();
   const RestaurentPromototedCard = PromototedCard(RestaurantCard);
-  if (OnlineStatus == false) return <h1>Looks Like You are Offline </h1>;
+  if (OnlineStatus == false) return <div className="CheckOnine"><h1 className="OnlineStatues">Looks Like You are Offline</h1> <h2> Please check your Internet connection !!!</h2></div>;
   return filteredRestaurants.length === 0 ? (
     <Shimmer />
   ) : (

@@ -11,6 +11,13 @@ body{
   background-color: #f15b43;
   color: white;
 }
+.CheckOnine{
+ justify-items: center;
+  .OnlineStatues{
+    
+    font-size: -webkit-xxx-large;
+  }
+}
 
 .search-nav {
   display: flex;
