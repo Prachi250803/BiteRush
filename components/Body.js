@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
+import PromototedCard from "./PromotedCard";
 import Shimmer from "./Shimmer";
 import { Link, useOutletContext } from "react-router-dom";
 import { FaSearch } from "react-icons/fa"; // or use any other icon
@@ -12,6 +13,7 @@ const Body = () => {
   const [filteredListofres, setfilteredListOfres] = useState([]);
   const { json } = useOutletContext();
   const OnlineStatus = useOnlineStatus();
+  const RestaurentPromototedCard = PromototedCard(RestaurantCard);
   useEffect(() => {
     if (json?.data?.cards) {
       const restaurants =
@@ -28,15 +30,26 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="res-conatiner">
-        {filteredListofres.map((restaurant) => (
-          <Link
-            key={restaurant?.info?.name}
-            to={"/menu/" + restaurant?.info?.id}
-            className="Link"
-          >
-            <RestaurantCard resdata={restaurant} />
-          </Link>
-        ))}
+        {filteredListofres.map((restaurant) => {
+          const ratingStr = restaurant?.info?.totalRatingsString;
+          const ratingNumber = ratingStr
+            ? parseFloat(ratingStr.replace("K+", "")) * 1000
+            : 0;
+
+          return (
+            <Link
+              key={restaurant?.info?.name}
+              to={"/menu/" + restaurant?.info?.id}
+              className="Link"
+            >
+              {ratingNumber > 50000 ? (
+                <RestaurentPromototedCard resdata={restaurant} />
+              ) : (
+                <RestaurantCard resdata={restaurant} />
+              )}
+            </Link>
+          );
+        })}
       </div>
     </div>
   );
