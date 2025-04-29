@@ -1,18 +1,22 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 const useOnlineStatus = () => {
-    const [online, setOnline] = useState(true)
-    useEffect(() => {
-        window.addEventListener("offline",()=>{
-            setOnline(true)
-        })  
-        window.addEventListener("online",()=>{
-            setOnline(false)
-        })
+  const [online, setOnline] = useState(navigator.onLine); // Initial status from browser
 
-       
-    },[])
-    return online
-}
+  useEffect(() => {
+    const handleOnline = () => setOnline(true);
+    const handleOffline = () => setOnline(false);
 
-export default useOnlineStatus
+    window.addEventListener("online", handleOnline);
+    window.addEventListener("offline", handleOffline);
+
+    return () => {
+      window.removeEventListener("online", handleOnline);
+      window.removeEventListener("offline", handleOffline);
+    };
+  }, []);
+
+  return online;
+};
+
+export default useOnlineStatus;
