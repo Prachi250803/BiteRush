@@ -2,10 +2,12 @@ import ItemList from "./ItemList";
 import { useState } from "react";
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 
-const RestaurantCategory = ({ item, cartItems, addFood, removeFood }) => {
-  const [showItems, setShowItems] = useState(false);
+const RestaurantCategory = ({ item, cartItems, addFood, removeFood ,showItems, setShowIndex }) => {
   const category = Object.keys(item)[0];
   const itemdata = item[category];
+  const handleClick = () =>{
+    setShowIndex()
+  }
 
   return (
     <div className="Accordian-parent">
@@ -14,7 +16,7 @@ const RestaurantCategory = ({ item, cartItems, addFood, removeFood }) => {
           {category} ({category.length})
         </span>
         <button
-          onClick={() => setShowItems((prev) => !prev)}
+        onClick={ handleClick}
           className="Accordian-button"
         >
           {showItems ? <FaChevronUp /> : <FaChevronDown />}

@@ -9,6 +9,7 @@ const RestaurantMenu = () => {
   const [menuItems, setMenuItems] = useState([]);
   const [resInfo, setResInfo] = useState("");
   const [cartItems, setCartItems] = useState({}); // using object { id: quantity }
+  const [showIndex , setShowIndex] = useState(null)
 
   const isLocalhost = window.location.hostname === "localhost";
   const API_BASE =
@@ -113,6 +114,10 @@ const RestaurantMenu = () => {
             cartItems={cartItems}
             addFood={addFood}
             removeFood={removeFood}
+            showItems={showIndex === index}
+            setShowIndex={() =>
+              setShowIndex(showIndex === index ? null : index)
+            }
           />
         ))
       )}
