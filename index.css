@@ -386,186 +386,7 @@
     text-align: center;
   }
 
-  .checkout-btn {
-    background-color: #ff5a1f;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-
-  .checkout-btn:hover {
-    background-color: #e14a12;
-  }
-}
-
-.menu {
-  /* Main */
-  margin: 20px;
-  .res-check-info {
-    display: flex;
-    align-items: center;
-    .res-info {
-        h1 {
-          color: #ff5a1f;
-          margin: 0px;
-        }
-        h3 {
-          font-size: 18px;
-          margin: 0px;
-          margin-top: 10px;
-        }
-      }
-      .checkout-btn {
-        background-color: #ff5a1f;
-        color: white;
-        border: none;
-        padding: 12px 24px;
-        font-size: 16px;
-        border-radius: 25px;
-        cursor: pointer;
-        transition: background 0.3s ease;
-        position: absolute;
-        margin-left: auto;
-        margin-right: auto;
-        right: 82px;
-      }
-    
-      .checkout-btn:hover {
-        background-color: #e14a12;
-      }
-  }
-
-  .menu-main {
-    flex: 1;
-    padding: 1rem;
-  }
-
-  .menu-section {
-    display: flex;
-    flex-direction: column;
-    .menu-category-title {
-      font-size: 20px;
-      font-weight: bold;
-      margin-top: 30px;
-      margin-bottom: 30px;
-      color: #f14f0f;
-    }
-
-    .menu-items-list {
-      display: flex;
-      flex-direction: row;
-      gap: 30px;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      /* Item Card */
-      .menu-item-card {
-        display: flex;
-        gap: 30px;
-        align-items: center;
-        padding: 10px;
-        background-color: #ffffff;
-        border: 1px solid #e5e7eb;
-        border-radius: 10px;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-        width: 450px;
-        .menu-item-image {
-          width: 80px;
-          height: 80px;
-          object-fit: cover;
-        }
-        .menu-item-content {
-          width: 340px;
-          .menu-item-name {
-            font-size: 18px;
-            font-weight: 600;
-            margin: 0;
-          }
-
-          .menu-item-desc {
-            font-size: 15px;
-            color: #6b7280;
-            margin: 10px 0;
-            overflow-wrap: break-word;
-          }
-
-          .menu-item-price {
-            font-weight: 500;
-            color: #111827;
-          }
-
-          .menu-add-btn {
-            margin-top: 0.5rem;
-            padding: 0.4rem 0.75rem;
-            background-color: #22c55e;
-            color: #fff;
-            border: none;
-            font-size: 12px;
-            border-radius: 5px;
-            cursor: pointer;
-          }
-
-          .menu-add-btn:hover {
-            background-color: #16a34a;
-          }
-
-          .cart-count {
-            .count-controls {
-              display: flex;
-              align-items: center;
-              gap: 10px;
-            }
-            
-            .count-controls button {
-              background-color: #ff6f00;
-              color: white;
-              border: none;
-              padding: 6px 10px;
-              border-radius: 5px;
-              font-size: 14px;
-              cursor: pointer;
-            }
-            
-            .count-controls button:hover {
-              background-color: #e65c00;
-            }
-            
-            .count-controls span {
-              font-size: 16px;
-              font-weight: bold;
-              color: #333;
-            }
-            
-            .add-btn {
-              background-color: #ff6f00;
-              color: white;
-              padding: 6px 16px;
-              font-size: 14px;
-              border: none;
-              border-radius: 5px;
-              cursor: pointer;
-              text-transform: uppercase;
-            }
-            
-            .add-btn:hover {
-              background-color: #e65c00;
-            }
-            
-            .add-btn:focus {
-              outline: none;
-            }
-          }
-          
-          
-        }
-      }
-    }
-  }
-
-  /* List Layout */
+ 
 }
 
 .LabelPromoted{
@@ -578,4 +399,171 @@
       color: white;
       margin-top: 4px;
 }
-
+.Accordian-wrapper{
+  color: orangered;
+  display: flex;
+  margin: 40px;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 20px;
+  justify-content: center;
+  width: 70%;
+  justify-self: center;
+  .Checkout{
+    .checkout-btn {
+      background-color: #ff5a1f;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    
+    .checkout-btn:hover {
+      background-color: #e14a12;
+    }
+    }
+  .Accordian-parent {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color:whitesmoke;
+  
+    .Accordian {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 15px;
+    }
+  
+    .Accordian-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  
+    .ItemList {
+      margin-top: auto;
+    }
+  }
+  .menu{
+    margin: 20px;
+    .menu-section {
+      display: flex;
+      flex-direction: column;
+  
+      .menu-items-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        /* Item Card */
+        .menu-item-card {
+          display: flex;
+          gap: 30px;
+          align-items: center;
+          padding: 10px;
+          background-color: #ffffff;
+          border: 1px solid #e5e7eb;
+          border-radius: 10px;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        
+          .menu-item-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+          }
+          .menu-item-content {
+            .menu-item-name {
+              font-size: 18px;
+              font-weight: 600;
+              margin: 0;
+            }
+  
+            .menu-item-desc {
+              font-size: 15px;
+              color: #6b7280;
+              margin: 10px 0;
+              overflow-wrap: break-word;
+            }
+  
+            .menu-item-price {
+              font-weight: 500;
+              color: #111827;
+            }
+  
+            .menu-add-btn {
+              margin-top: 0.5rem;
+              padding: 0.4rem 0.75rem;
+              background-color: #22c55e;
+              color: #fff;
+              border: none;
+              font-size: 12px;
+              border-radius: 5px;
+              cursor: pointer;
+            }
+  
+            .menu-add-btn:hover {
+              background-color: #16a34a;
+            }
+  
+            .cart-count {
+              .count-controls {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+              }
+              
+              .count-controls button {
+                background-color: #ff6f00;
+                color: white;
+                border: none;
+                padding: 6px 10px;
+                border-radius: 5px;
+                font-size: 14px;
+                cursor: pointer;
+              }
+              
+              .count-controls button:hover {
+                background-color: #e65c00;
+              }
+              
+              .count-controls span {
+                font-size: 16px;
+                font-weight: bold;
+                color: #333;
+              }
+              
+              .add-btn {
+                background-color: #ff6f00;
+                color: white;
+                padding: 6px 16px;
+                font-size: 14px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                text-transform: uppercase;
+              }
+              
+              .add-btn:hover {
+                background-color: #e65c00;
+              }
+              
+              .add-btn:focus {
+                outline: none;
+              }
+            }
+            
+            
+          }
+        }
+      }
+    }
+  
+  }
+}

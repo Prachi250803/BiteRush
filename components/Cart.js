@@ -66,7 +66,6 @@ const Cart = () => {
         <p>
           Total: <strong>{calculateTotal()/100}</strong>
         </p>
-        <button className="checkout-btn">Proceed to Checkout</button>
       </div>
     </div>
   );
