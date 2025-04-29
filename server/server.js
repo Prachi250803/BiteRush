@@ -38,7 +38,6 @@ app.get('/api/menu/:resId', async (req, res) => {
       }
     );
     const data = await response.json();
-    console.log('Fetched restaurant menu data:', data);  // Log the fetched data for debugging
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.status(200).json(data);
   } catch (err) {

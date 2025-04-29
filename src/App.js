@@ -12,7 +12,8 @@ import RestaurantMenu from "../components/RestaurantMenu";
 import { useEffect, useState } from "react";
 
 const AppLayout = () => {
-  const [json, setJson] = useState(null);
+  const [json, setJson] = useState([]);
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const API_BASE =
   process.env.NODE_ENV === "development"
     ? "http://localhost:3001"
@@ -21,9 +22,10 @@ const AppLayout = () => {
   const fetchData = async () => {
     try {
       const res = await fetch(`${API_BASE}/api/swiggy`);
-      console.log('Fetched data:', `${API_BASE}/api/swiggy`);
       const data = await res.json();
-      setJson(data);
+      const listOfRestaurant = data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+
+      setJson(listOfRestaurant);
     } catch (err) {
       console.error("Failed to fetch:", err);
     }
@@ -39,8 +41,8 @@ const AppLayout = () => {
 
   return (
     <div className="app">
-      <Header json={json} />
-      {json && <Outlet context={{ json }} />}
+      <Header json={json} onSearch={setFilteredRestaurants}  />
+      {json && <Outlet context={{ filteredRestaurants }} />}
     </div>
   );
 };

@@ -73,7 +73,6 @@ const RestaurantMenu = () => {
 
     const cards =
       json?.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
-    console.log("--------------", cards);
     const items = [];
     cards?.forEach((c) => {
       const itemCards = c.card?.card?.itemCards;
