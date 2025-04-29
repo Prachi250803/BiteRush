@@ -26,10 +26,11 @@ const Header = (props) => {
       
     return (
     <div className="Header">
+      <div className='search-nav'>
         <div className="logo-conatiner">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpEakNrR65pHxi5PX2Ukq3LDrEIm0YrbejiA&s" width="100px" height="100px"></img>
         </div>
-        <div className='search-nav'>
+        
          <div className="SearchConatiner">
                   <input
                     type="text"
@@ -46,13 +47,14 @@ const Header = (props) => {
                     <FaSearch size={20} color="#6B7280" />
                   </button>
                 </div>
+                </div>
         <div className='nav-items'>
             <ul>
                 <li> <Link to="/"> Home</Link></li>
                 <li><Link to="/about">About us</Link></li>
                 <li><Link to="/contact">Contact us</Link></li>
             </ul>
-        </div>
+        
         </div>
     </div>
     )
