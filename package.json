@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "By prachi Apsingekar",
   "scripts": {
-"start": "concurrently \"npm run dev\" \"node server/server.js\"",
+    "start": "concurrently \"npm run dev\" \"node server/server.js\"",
     "build": "parcel build index.html",
     "dev": "parcel index.html"
   },
@@ -20,6 +20,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.2",
+    "firebase": "^11.6.1",
     "node-fetch": "^2.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

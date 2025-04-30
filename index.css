@@ -1,4 +1,4 @@
-body{
+body {
   background-color: #f5e9dc;
 }
 
@@ -10,11 +10,13 @@ body{
   padding: 15px 20px;
   background-color: #f15b43;
   color: white;
+  position: sticky;
+    top: 0;
+    z-index: 4;
 }
-.CheckOnine{
- justify-items: center;
-  .OnlineStatues{
-    
+.CheckOnine {
+  justify-items: center;
+  .OnlineStatues {
     font-size: -webkit-xxx-large;
   }
 }
@@ -24,19 +26,19 @@ body{
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  flex: 1;
   flex-wrap: wrap;
   .logo-conatiner {
     display: flex;
     align-items: center;
   }
-  
+
   .logo-conatiner img {
     width: 100px;
     height: 50px;
     object-fit: cover;
   }
 }
+
 
 .SearchConatiner {
   display: flex;
@@ -65,12 +67,12 @@ body{
 }
 
 .search-btn svg {
-  color: #6B7280;
+  color: #6b7280;
   transition: color 0.3s;
 }
 
 .search-btn:hover svg {
-  color: #4A4A4A;
+  color: #4a4a4a;
 }
 
 .nav-items {
@@ -78,6 +80,7 @@ body{
   align-items: center;
   justify-content: center;
   display: flex;
+  gap:50px;
 
   ul {
     display: flex;
@@ -93,6 +96,50 @@ body{
       }
     }
   }
+  .SignupLogin{
+    display: flex;
+      flex-direction: row;
+      gap: 20px;
+      button {
+        padding: 8px 16px;
+        font-size: 14px;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        background-color: white;
+        color: #ff6600; 
+        border: 1px solid #f0ceb7;
+      }
+      button:hover {
+        background-color: #dfdfdf;
+        color: #ff6600;
+      }
+      .user-dropdown{
+        position: relative;
+        .logout-menu {
+          position: absolute;
+          top: 36px;
+          right: 0;
+          background: white;
+          border: 1px solid #ccc;
+          padding: 4px 0;
+          border-radius: 4px;
+          z-index: 100;
+          button {
+            width: 100%;
+            padding: 8px 12px;
+            background: none;
+            border: none;
+            text-align: left;
+    
+            &:hover {
+              background: #f5f5f5;
+            }
+          }
+        }    
+      }
+    }
 }
 /* Responsive - for smaller screens */
 @media (max-width: 804px) {
@@ -112,7 +159,6 @@ body{
     flex-direction: row;
   }
 }
-
 
 .filter {
   display: flex;
@@ -135,7 +181,6 @@ body{
 .Link {
   all: unset;
 }
-
 
 .res-card {
   width: 280px;
@@ -438,21 +483,19 @@ body{
   .cart-summary {
     text-align: center;
   }
-
- 
 }
 
-.LabelPromoted{
+.LabelPromoted {
   position: absolute;
-      background: rgb(43, 28, 28);
-      z-index: 2;
-      padding: 3px;
-      border-radius: 5px;
-      margin-left: 4px;
-      color: white;
-      margin-top: 4px;
+  background: rgb(43, 28, 28);
+  z-index: 2;
+  padding: 3px;
+  border-radius: 5px;
+  margin-left: 4px;
+  color: white;
+  margin-top: 4px;
 }
-.Accordian-wrapper{
+.Accordian-wrapper {
   color: orangered;
   display: flex;
   margin: 40px;
@@ -462,7 +505,7 @@ body{
   justify-content: center;
   width: 70%;
   justify-self: center;
-  .Checkout{
+  .Checkout {
     .checkout-btn {
       background-color: #ff5a1f;
       color: white;
@@ -473,17 +516,17 @@ body{
       cursor: pointer;
       transition: background 0.3s ease;
     }
-    
+
     .checkout-btn:hover {
       background-color: #e14a12;
     }
-    }
+  }
   .Accordian-parent {
     display: flex;
     flex-direction: column;
     position: relative;
-    background-color:#ff8a6533;
-  
+    background-color: #ff8a6533;
+
     .Accordian {
       display: flex;
       justify-content: space-between;
@@ -491,24 +534,24 @@ body{
       margin-bottom: 10px;
       padding: 15px;
     }
-  
+
     .Accordian-button {
       background: none;
       border: none;
       cursor: pointer;
       font-size: 16px;
     }
-  
+
     .ItemList {
       margin-top: auto;
     }
   }
-  .menu{
+  .menu {
     margin: 20px;
     .menu-section {
       display: flex;
       flex-direction: column;
-  
+
       .menu-items-list {
         display: flex;
         flex-direction: column;
@@ -525,7 +568,7 @@ body{
           border: 1px solid #e5e7eb;
           border-radius: 10px;
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-        
+
           .menu-item-image {
             width: 80px;
             height: 80px;
@@ -537,19 +580,19 @@ body{
               font-weight: 600;
               margin: 0;
             }
-  
+
             .menu-item-desc {
               font-size: 15px;
               color: #6b7280;
               margin: 10px 0;
               overflow-wrap: break-word;
             }
-  
+
             .menu-item-price {
               font-weight: 500;
               color: #111827;
             }
-  
+
             .menu-add-btn {
               margin-top: 0.5rem;
               padding: 0.4rem 0.75rem;
@@ -560,18 +603,18 @@ body{
               border-radius: 5px;
               cursor: pointer;
             }
-  
+
             .menu-add-btn:hover {
               background-color: #16a34a;
             }
-  
+
             .cart-count {
               .count-controls {
                 display: flex;
                 align-items: center;
                 gap: 10px;
               }
-              
+
               .count-controls button {
                 background-color: #ff6f00;
                 color: white;
@@ -581,17 +624,17 @@ body{
                 font-size: 14px;
                 cursor: pointer;
               }
-              
+
               .count-controls button:hover {
                 background-color: #e65c00;
               }
-              
+
               .count-controls span {
                 font-size: 16px;
                 font-weight: bold;
                 color: #333;
               }
-              
+
               .add-btn {
                 background-color: #ff6f00;
                 color: white;
@@ -602,21 +645,86 @@ body{
                 cursor: pointer;
                 text-transform: uppercase;
               }
-              
+
               .add-btn:hover {
                 background-color: #e65c00;
               }
-              
+
               .add-btn:focus {
                 outline: none;
               }
             }
-            
-            
           }
         }
       }
     }
-  
+  }
+}
+
+/* App.css */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  .modal-box {
+    background: rgb(37, 23, 23);
+    padding: 2rem;
+    border-radius: 8px;
+    color: blanchedalmond;
+
+    width: 50%;
+    h2 {
+      color: ff5a1f;
+      justify-self: center;
+    }
+    .inputbuttonconatiner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      .input {
+        width: 65%;
+        height: 40px;
+        font-size: 18px;
+      }
+      .button {
+        width: 20%;
+        padding: 8px 16px;
+        margin-top: 12px;
+        margin-right: 8px;
+        font-size: 15px;
+        border-radius: 4px;
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition: background 0.2s ease, border 0.2s ease;
+        
+      }
+      .create {
+        background-color: #ff5a1f; /* Blue-600 */
+        color: white;
+      }
+
+     .create:hover {
+        background-color: #e14a12; /* Blue-700 */
+      }
+
+      /* Secondary button – Close */
+      .close {
+        background-color: rgb(161, 161, 161);
+        color: white;
+        border: 1px solid #0c0c0c;
+      }
+
+      .close:hover {
+        background-color: #747373;
+      }
+    }
   }
 }
