@@ -34,6 +34,17 @@ const Header = (props) => {
     return () => clearTimeout(debounceTimeout);
   }, [Input, props.json]);
 
+  useEffect(() => {
+    if (isSignupOpen || showLogin) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+
+    // Clean up on unmount
+    return () => document.body.classList.remove("no-scroll");
+  }, [isSignupOpen, showLogin]);
+
   const handleLogout = async () => {
     await signOut(auth);
     setShowLogout(false);
@@ -66,26 +77,38 @@ const Header = (props) => {
 
       <div className="nav-items">
         <ul>
-          <li><Link to="/"> Home</Link></li>
-          <li><Link to="/about">About us</Link></li>
-          <li><Link to="/contact">Contact us</Link></li>
+          <li>
+            <Link to="/"> Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About us</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact us</Link>
+          </li>
         </ul>
 
         <div className="SignupLogin">
-        {!user ? (
-    <>
-      <button onClick={() => setIsSignupOpen(true)}>Sign Up</button>
-      <SignupModal isOpen={isSignupOpen} onClose={() => setIsSignupOpen(false)} />
+          {!user ? (
+            <>
+              <button onClick={() => setIsSignupOpen(true)}>Sign Up</button>
+              <SignupModal
+                isOpen={isSignupOpen}
+                onClose={() => setIsSignupOpen(false)}
+              />
 
-      <button onClick={() => setShowLogin(true)}>Login</button>
-      <LoginModal isOpen={showLogin} onClose={() => setShowLogin(false)} />
-    </>
-  ) : (
-    <>
-      <button>{user.displayName || user.email}</button>
-      <button onClick={handleLogout}>Logout</button>
-    </>
-  )}
+              <button onClick={() => setShowLogin(true)}>Login</button>
+              <LoginModal
+                isOpen={showLogin}
+                onClose={() => setShowLogin(false)}
+              />
+            </>
+          ) : (
+            <>
+              <button>{user.displayName || user.email}</button>
+              <button onClick={handleLogout}>Logout</button>
+            </>
+          )}
         </div>
       </div>
     </div>
