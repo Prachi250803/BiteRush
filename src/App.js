@@ -7,7 +7,7 @@ import Body from "../components/Body";
 import About from "../components/About";
 import Cart from "../components/Cart";
 import Contact from "../components/Conatct";
-import Error from "../components/RestaurantMenu";
+import Error from "../components/Error";
 import { useEffect, useState } from "react";
 
 const AppLayout = () => {
