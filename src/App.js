@@ -9,7 +9,6 @@ import Cart from "../components/Cart";
 import Contact from "../components/Conatct";
 import Error from "../components/RestaurantMenu";
 import { useEffect, useState } from "react";
-import { lazy, Suspense } from 'react'
 
 const AppLayout = () => {
   const [json, setJson] = useState([]);
@@ -72,7 +71,7 @@ const AppRouter = createBrowserRouter([
       {
         path: "/menu/:resId",
         element: 
-        <Suspense>
+        <Suspense fallback={<div>Loading Menu...</div>}>
         <RestaurantMenu />,
         </Suspense>
       },
