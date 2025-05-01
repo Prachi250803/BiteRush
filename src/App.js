@@ -9,6 +9,7 @@ import Cart from "../components/Cart";
 import Contact from "../components/Conatct";
 import Error from "../components/Error";
 import { useEffect, useState } from "react";
+import { lazy ,Suspense } from "react";
 const RestaurantMenu = lazy(()=> import( "../components/RestaurantMenu"))
 const AppLayout = () => {
   const [json, setJson] = useState([]);
