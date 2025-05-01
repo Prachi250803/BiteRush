@@ -1,8 +1,10 @@
-import RestaurantCard from "./RestaurantCard";
-import PromototedCard from "./PromotedCard";
-import Shimmer from "./Shimmer";
-import { Link, useOutletContext } from "react-router-dom";
-import useOnlineStatus from "../src/utils/useOnlineStatus";
+import { useEffect, useState } from "react";
+ import RestaurantCard from "./RestaurantCard";
+ import PromototedCard from "./PromotedCard";
+ import Shimmer from "./Shimmer";
+ import { Link, useOutletContext } from "react-router-dom";
+ import { FaSearch } from "react-icons/fa"; // or use any other icon
+ import useOnlineStatus from "../src/utils/useOnlineStatus";
 
 // size in px, color optional
 const Body = () => {

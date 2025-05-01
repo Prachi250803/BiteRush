@@ -1,5 +1,6 @@
 import ItemList from "./ItemList";
-import { FaChevronUp, FaChevronDown } from "react-icons/fa";
+ import { useState } from "react";
+ import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 
 const RestaurantCategory = ({ item, cartItems, addFood, removeFood ,showItems, setShowIndex }) => {
   const category = Object.keys(item)[0];

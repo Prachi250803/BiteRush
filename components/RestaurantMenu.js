@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
-import { Link } from "react-router-dom";
-import RestaurantCategory from "./RestaurantCategory";
-
+ import { useParams } from "react-router";
+ import { Link } from "react-router-dom";
+ import CartCount from "./CartCount";
+ import RestaurantCategory from "./RestaurantCategory";
+ 
 const RestaurantMenu = () => {
   const { resId } = useParams();
   const [menuItems, setMenuItems] = useState([]);
