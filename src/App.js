@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "../index.css";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
@@ -8,7 +8,6 @@ import About from "../components/About";
 import Cart from "../components/Cart";
 import Contact from "../components/Conatct";
 import Error from "../components/RestaurantMenu";
-import RestaurantMenu from "../components/RestaurantMenu";
 import { useEffect, useState } from "react";
 
 const AppLayout = () => {
@@ -39,6 +38,7 @@ const AppLayout = () => {
   useEffect(() => {
   }, [json]);
 
+  const RestaurantMenu = lazy(()=> import( "../components/RestaurantMenu"))
   return (
     <div className="app">
       <Header json={json} onSearch={setFilteredRestaurants}  />
@@ -70,7 +70,10 @@ const AppRouter = createBrowserRouter([
       },
       {
         path: "/menu/:resId",
-        element: <RestaurantMenu />,
+        element: 
+        <Suspense>
+        <RestaurantMenu />,
+        </Suspense>
       },
     ],
     errorElement: <Error />,
