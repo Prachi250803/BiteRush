@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
  import { Link } from "react-router-dom";
  import CartCount from "./CartCount";
  import RestaurantCategory from "./RestaurantCategory";
- 
+
 const RestaurantMenu = () => {
   const { resId } = useParams();
   const [menuItems, setMenuItems] = useState([]);
@@ -93,7 +93,10 @@ const RestaurantMenu = () => {
   );
 
   return (
-    <div className=" Accordian-wrapper">
+    <div className="Accordian-wrapper">
+      <div>
+        <Link to="/" className="Checkout"><button className=" checkout-btn"> Back</button></Link>
+      </div>
        {totalItems > 0 && (
           <div className="Checkout">
             <Link to="/cart" state={{ cartItems}}>

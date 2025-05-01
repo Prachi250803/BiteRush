@@ -553,7 +553,7 @@ body {
     flex-direction: column;
     position: relative;
     background-color: #ff8a6533;
-
+    
     .Accordian {
       display: flex;
       justify-content: space-between;
