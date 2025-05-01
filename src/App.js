@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import "../index.css";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
@@ -9,6 +9,7 @@ import Cart from "../components/Cart";
 import Contact from "../components/Conatct";
 import Error from "../components/RestaurantMenu";
 import { useEffect, useState } from "react";
+import { lazy, Suspense } from 'react'
 
 const AppLayout = () => {
   const [json, setJson] = useState([]);
