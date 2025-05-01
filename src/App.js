@@ -9,7 +9,7 @@ import Cart from "../components/Cart";
 import Contact from "../components/Conatct";
 import Error from "../components/Error";
 import { useEffect, useState } from "react";
-
+const RestaurantMenu = lazy(()=> import( "../components/RestaurantMenu"))
 const AppLayout = () => {
   const [json, setJson] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
@@ -38,7 +38,6 @@ const AppLayout = () => {
   useEffect(() => {
   }, [json]);
 
-  const RestaurantMenu = lazy(()=> import( "../components/RestaurantMenu"))
   return (
     <div className="app">
       <Header json={json} onSearch={setFilteredRestaurants}  />
